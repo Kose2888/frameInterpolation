@@ -27,7 +27,7 @@ def extract_frames(video_path, output_folder):
     video_capture.release()
     print(f"Extracted {frame_count} frames and saved to '{output_folder}'")
 
-# Example usage
+
 video_path = "C:/Users/Ethan/frameInterpVids/demonSlayer.mp4"
 output_folder = "frames/test1"
 extract_frames(video_path, output_folder)
