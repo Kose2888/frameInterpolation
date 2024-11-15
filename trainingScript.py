@@ -67,9 +67,9 @@ class DataGenerator(tf.keras.utils.Sequence):
         return np.array(X), np.array(y)
 
 # Training setup
-data_dir = "frames/training"  # Replace with your dataset path
+data_dir = "frames/test1"  # Replace with your dataset path
 batch_size = 8
-epochs = 100
+epochs = 10
 
 # Create data generator
 train_gen = DataGenerator(data_dir=data_dir, batch_size=batch_size)
@@ -82,4 +82,4 @@ tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=log_dir, histogram
 history = model.fit(train_gen, epochs=epochs, callbacks=[tensorboard_callback])
 
 # Save the model
-model.save("Frame_Interpolation_Model_Training200.keras")
+model.save("Frame_Interpolation_Model_Test1.keras")
