@@ -47,7 +47,9 @@ class DataGenerator(tf.keras.utils.Sequence):
 
         for idx in batch_indexes:
 
-            print(self.sortedFrames[idx])
+            print("sorted frames 1: ", self.sortedFrames[idx])
+            print("sorted frames 2: ", self.sortedFrames[idx + 1])
+            print("sorted frames 3: ", self.sortedFrames[idx + 2])
 
             frame1 = cv2.imread(self.sortedFrames[idx])
             frame2 = cv2.imread(self.sortedFrames[idx + 1])
