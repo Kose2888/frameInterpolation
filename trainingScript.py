@@ -45,7 +45,10 @@ class DataGenerator(tf.keras.utils.Sequence):
         X = []
         y = []
 
-        for idx in range(len(self.sortedFrames) - 2):
+        for idx in batch_indexes:
+
+            print(self.sortedFrames[idx])
+
             frame1 = cv2.imread(self.sortedFrames[idx])
             frame2 = cv2.imread(self.sortedFrames[idx + 1])
             frame3 = cv2.imread(self.sortedFrames[idx + 2])
@@ -67,7 +70,7 @@ class DataGenerator(tf.keras.utils.Sequence):
         return np.array(X), np.array(y)
 
 # Training setup
-data_dir = "frames/test1"  # Replace with your dataset path
+data_dir = "frames/familyGuyComp"  # Replace with your dataset path
 batch_size = 8
 epochs = 10
 
@@ -77,9 +80,15 @@ train_gen = DataGenerator(data_dir=data_dir, batch_size=batch_size)
 # TensorBoard callback
 log_dir = "logs/frame_interpolation"
 tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1)
+checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
+    filepath="tmp/model_checkpoint.keras",
+    save_best_only=True,
+    monitor="loss",
+    mode="min"
+)
 
 # Train model
-history = model.fit(train_gen, epochs=epochs, callbacks=[tensorboard_callback])
+history = model.fit(train_gen, epochs=epochs, callbacks=[tensorboard_callback, checkpoint_callback])
 
 # Save the model
-model.save("Frame_Interpolation_Model_Test1.keras")
+model.save("FIM_familyGuyComp.keras")

@@ -37,4 +37,7 @@ Prerequisites:
 https://animeclips.online/home/
 https://ezgif.com/video-to-jpg
 
+https://y2meta.tube/convert/?videoId=HZulBIgRLLE
+https://www.youtube.com/watch?v=HZulBIgRLLE
+
 ## Training
