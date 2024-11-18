@@ -4,7 +4,7 @@ from tensorflow.keras.models import load_model
 
 # Parameters
 img_size = (96, 160)  # Same size used during training
-model_path = "Frame_Interpolation_Model"  # Path to your saved model
+model_path = "models/"  # Path to your saved model
 
 # Load the trained model
 model = load_model(model_path)

@@ -45,11 +45,10 @@ class DataGenerator(tf.keras.utils.Sequence):
         y = []
 
         for idx in batch_indexes:
-        #for idx in range(len(self.sortedFrames) -2 ):
 
-            print("sorted frames 1: ", self.sortedFrames[idx])
-            print("sorted frames 2: ", self.sortedFrames[idx + 1])
-            print("sorted frames 3: ", self.sortedFrames[idx + 2])
+            #print("sorted frames 1: ", self.sortedFrames[idx])
+            #print("sorted frames 2: ", self.sortedFrames[idx + 1])
+            #print("sorted frames 3: ", self.sortedFrames[idx + 2])
 
             frame1 = cv2.imread(self.sortedFrames[idx])
             frame2 = cv2.imread(self.sortedFrames[idx + 1])
@@ -72,7 +71,7 @@ class DataGenerator(tf.keras.utils.Sequence):
         return np.array(X), np.array(y)
 
 # Training setup
-data_dir = "frames/test1"  # Replace with your dataset path
+data_dir = "frames/familyGuy"  # Replace with your dataset path
 batch_size = 8
 epochs = 10
 
@@ -93,7 +92,7 @@ checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
 history = model.fit(train_gen, epochs=epochs, callbacks=[tensorboard_callback, checkpoint_callback])
 
 # Save the model
-model.save("FIM_familyGuy_a.keras")
+model.save("FIM_familyGuy_500.keras")
 
 # Evaluate the model
 evaluation_loss = model.evaluate(train_gen)
