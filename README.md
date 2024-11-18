@@ -34,10 +34,8 @@ Prerequisites:
 `python3 [nameOfFile.py]`
 
 ## Sites used
-https://animeclips.online/home/
-https://ezgif.com/video-to-jpg
-
-https://y2meta.tube/convert/?videoId=HZulBIgRLLE
-https://www.youtube.com/watch?v=HZulBIgRLLE
+https://www.youtube.com/
+https://y2meta.tube/
 
 ## Training
+https://www.youtube.com/watch?v=s6yqNQeuoZU
