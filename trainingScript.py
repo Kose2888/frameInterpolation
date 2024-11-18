@@ -18,21 +18,11 @@ class DataGenerator(tf.keras.utils.Sequence):
     def __len__(self):
         return int(np.floor(len(self.indexes) / self.batch_size))
 
-    #def __getitem__(self, index):
-        #batch_indexes = self.indexes[index*self.batch_size:(index+1)*self.batch_size]
-        #X, y = self.__data_generation(batch_indexes)
-        #return X, y
-
     def __getitem__(self, index):
-        if self.shuffle:
-            batch_indexes = np.random.choice(self.indexes, size=self.batch_size, replace=False)
-        else:
-            batch_indexes = self.indexes[index * self.batch_size:(index + 1) * self.batch_size]
-
+        batch_indexes = self.indexes[index*self.batch_size:(index+1)*self.batch_size]
         X, y = self.__data_generation(batch_indexes)
         return X, y
-
-
+ 
     def sortFrames(self):
         files = []
         for dirname, dirnames, filenames in os.walk(self.data_dir):
