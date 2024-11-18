@@ -10,8 +10,7 @@ class DataGenerator(tf.keras.utils.Sequence):
         self.batch_size = batch_size
         self.img_size = img_size
         self.shuffle = shuffle
-        #self.file_paths = sorted(glob.glob(os.path.join(data_dir, "*.png")))
-        self.file_paths = os.path.join(data_dir, "*.jpg")
+        self.file_paths = sorted(glob.glob(os.path.join(data_dir, "*.jpg")))
         self.indexes = np.arange(len(self.file_paths) - 2)
         self.on_epoch_end()
         self.sortFrames()
@@ -94,7 +93,7 @@ checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
 history = model.fit(train_gen, epochs=epochs, callbacks=[tensorboard_callback, checkpoint_callback])
 
 # Save the model
-model.save("FIM_test1a.keras")
+model.save("FIM_familyGuy_a.keras")
 
 # Evaluate the model
 evaluation_loss = model.evaluate(train_gen)
