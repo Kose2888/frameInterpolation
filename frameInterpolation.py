@@ -4,7 +4,7 @@ from tensorflow.keras.models import load_model
 
 # Parameters
 img_size = (96, 160)  # Same size used during training
-model_path = "models/"  # Path to your saved model
+model_path = "/mnt/c/Users/Ethan/github/kose2888/frameInterpolation/models/FIM_familyGuy_500.keras"  # Path to your saved model
 
 # Load the trained model
 model = load_model(model_path)
@@ -16,8 +16,8 @@ def preprocess_frame(image_path, img_size):
     return frame
 
 # Load a pair of frames (frame1 and frame3)
-frame1 = preprocess_frame("path_to_frame1.png", img_size)
-frame3 = preprocess_frame("path_to_frame3.png", img_size)
+frame1 = preprocess_frame("/mnt/c/Users/Ethan/github/kose2888/frameInterpolation/frames/familyGuy2/frame_00050.jpg", img_size)
+frame3 = preprocess_frame("/mnt/c/Users/Ethan/github/kose2888/frameInterpolation/frames/familyGuy2/frame_00052.jpg", img_size)
 
 # Stack and expand dimensions for the model
 input_data = np.expand_dims(np.concatenate((frame1, frame3), axis=-1), axis=0)
@@ -29,5 +29,5 @@ predicted_frame = model.predict(input_data)[0]
 predicted_frame = (predicted_frame * 255).astype(np.uint8)
 
 # Save the predicted frame to verify the result
-cv2.imwrite("predicted_frame.png", predicted_frame)
-print("Intermediate frame saved as 'predicted_frame.png'")
+cv2.imwrite("/mnt/c/Users/Ethan/github/kose2888/frameInterpolation/output/FIM_familyGuy_500/predicted_frame51.jpg", predicted_frame)
+print("Intermediate frame saved as 'predicted_frame51.jpg'")
