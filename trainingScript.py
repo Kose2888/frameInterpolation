@@ -95,3 +95,7 @@ history = model.fit(train_gen, epochs=epochs, callbacks=[tensorboard_callback, c
 
 # Save the model
 model.save("FIM_test1a.keras")
+
+# Evaluate the model
+evaluation_loss = model.evaluate(train_gen)
+print(f"Evaluation Loss: {evaluation_loss}")
