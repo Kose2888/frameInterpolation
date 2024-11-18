@@ -92,7 +92,7 @@ checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
 history = model.fit(train_gen, epochs=epochs, callbacks=[tensorboard_callback, checkpoint_callback])
 
 # Save the model
-model.save("FIM_familyGuy_5000.keras")
+model.save("FIM_familyGuy_1hr.keras")
 
 # Evaluate the model
 evaluation_loss = model.evaluate(train_gen)

@@ -4,7 +4,7 @@ from tensorflow.keras.models import load_model
 
 # Parameters
 img_size = (96, 160)  # Same size used during training
-model_path = "/mnt/c/Users/Ethan/github/kose2888/frameInterpolation/models/FIM_familyGuy_5000.keras"  # Path to your saved model
+model_path = "/mnt/c/Users/Ethan/github/kose2888/frameInterpolation/models/FIM_familyGuy_1hr.keras"  # Path to your saved model
 
 # Load the trained model
 model = load_model(model_path)
@@ -29,5 +29,5 @@ predicted_frame = model.predict(input_data)[0]
 predicted_frame = (predicted_frame * 255).astype(np.uint8)
 
 # Save the predicted frame to verify the result
-cv2.imwrite("/mnt/c/Users/Ethan/github/kose2888/frameInterpolation/output/FIM_familyGuy_5000/predicted_frame51.jpg", predicted_frame)
+cv2.imwrite("/mnt/c/Users/Ethan/github/kose2888/frameInterpolation/output/FIM_familyGuy_1hr/predicted_frame51.jpg", predicted_frame)
 print("Intermediate frame saved as 'predicted_frame51.jpg'")
