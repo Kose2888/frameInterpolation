@@ -71,7 +71,7 @@ class DataGenerator(tf.keras.utils.Sequence):
         return np.array(X), np.array(y)
 
 # Training setup
-data_dir = "frames/familyGuy"  # Replace with your dataset path
+data_dir = "frames/familyGuy1hr"  # Replace with your dataset path
 batch_size = 8
 epochs = 10
 
@@ -92,7 +92,7 @@ checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
 history = model.fit(train_gen, epochs=epochs, callbacks=[tensorboard_callback, checkpoint_callback])
 
 # Save the model
-model.save("FIM_familyGuy_500.keras")
+model.save("FIM_familyGuy_5000.keras")
 
 # Evaluate the model
 evaluation_loss = model.evaluate(train_gen)

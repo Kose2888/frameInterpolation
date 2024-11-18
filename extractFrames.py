@@ -37,6 +37,6 @@ def extract_frames(video_path, output_folder):
 
 # Example usage
 
-video_path = "/mnt/c/Users/Ethan/frameInterpVids/Family Guy Season 19 funny scenes compilation. - GXT Plays (360p, h264, youtube).mp4"
-output_folder = "frames/familyGuyComp"
+video_path = "/mnt/c/Users/Ethan/frameInterpVids/Family Guy Funny Moments! 1 Hour Best Of Compilation _dark humour_offensive_ - eCinema (360p, h264, youtube).mp4"
+output_folder = "frames/familyGuy1hr"
 extract_frames(video_path, output_folder)
