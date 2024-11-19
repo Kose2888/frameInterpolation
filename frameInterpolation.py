@@ -5,9 +5,9 @@ from tensorflow.keras.models import load_model
 
 # Parameters
 img_size = (96, 160)  # Same size used during training
-model_path = "/mnt/c/Users/Ethan/github/kose2888/frameInterpolation/models/FIM_familyGuy_1hr.keras"  # Path to your saved model
+model_path = "/mnt/c/Users/Ethan/github/kose2888/frameInterpolation/models/FIM_familyGuy_5000.keras"  # Path to your saved model
 data_dir = "/mnt/c/Users/Ethan/github/kose2888/frameInterpolation/frames/familyGuyComp/"  # A dataset that the model was not trained on
-output_dir = "/mnt/c/Users/Ethan/github/kose2888/frameInterpolation/output/FIM_familyGuy_1hr/"
+output_dir = "/mnt/c/Users/Ethan/github/kose2888/frameInterpolation/output/FIM_familyGuy_5000/"
 
 # Load the trained model
 model = load_model(model_path)

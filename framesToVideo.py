@@ -1,8 +1,8 @@
 import cv2
 import os
 
-frames_folder = "/mnt/c/Users/Ethan/github/kose2888/frameInterpolation/output/FIM_familyGuy_1hr/"
-output_video_path = "producedVideos/FIM_familyGuy_1hr/output_video.mp4"
+frames_folder = "/mnt/c/Users/Ethan/github/kose2888/frameInterpolation/output/FIM_familyGuy_5000/"
+output_video_path = "producedVideos/FIM_familyGuy_5000/output_video.mp4"
 fps = 10 # Matching the extracted frames 
 
 def sortFrames(frames_folder):
