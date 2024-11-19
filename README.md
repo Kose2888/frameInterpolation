@@ -38,4 +38,5 @@ https://www.youtube.com/
 https://y2meta.tube/
 
 ## Training
-https://www.youtube.com/watch?v=s6yqNQeuoZU
+- The most accurate model (FIMfamilyGuy1hr) was trained on this 1 hour family guy clip (~40,000 frames): https://www.youtube.com/watch?v=s6yqNQeuoZU
+- The same model then interpolated the frames from this different family guy clip: https://www.youtube.com/watch?v=HZulBIgRLLE&t=84s
