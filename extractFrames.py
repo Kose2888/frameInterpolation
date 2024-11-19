@@ -35,8 +35,6 @@ def extract_frames(video_path, output_folder):
     video_capture.release()
     print(f"Extracted {saved_frame_count} frames at 10 FPS and saved to '{output_folder}'")
 
-# Example usage
-
 video_path = "/mnt/c/Users/Ethan/frameInterpVids/Family Guy Funny Moments! 1 Hour Best Of Compilation _dark humour_offensive_ - eCinema (360p, h264, youtube).mp4"
 output_folder = "frames/familyGuy1hr"
 extract_frames(video_path, output_folder)
